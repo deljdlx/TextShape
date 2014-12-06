@@ -11,7 +11,7 @@ $image='cat-grumpy-icon.png';
 
 $test=new ImageShape($image);
 $cssDeclaration=$test->getCSSDivShapeDeclaration();
-
+$shapes=$test->getDivShape('left');
 
 
 ?>
@@ -40,7 +40,7 @@ $cssDeclaration=$test->getCSSDivShapeDeclaration();
 
 
 <div class="container">
-	<?php echo $test->getDivShape('left');?>
+	<?php echo $shapes; ?>
 	<h1>Text Shape PHP demo</h1>
 	<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor odio nec est vestibulum, in finibus arcu laoreet. Nam rutrum sagittis purus, in posuere massa dapibus vel. Duis non magna erat. Pellentesque imperdiet est at nibh interdum, sit amet ultrices eros iaculis. Nam sit amet imperdiet orci. Etiam lorem nulla, lobortis euismod fringilla eget, hendrerit et eros. Sed eget neque leo. Morbi eros dui, sagittis eget gravida vel, mattis eget justo. Quisque tempor rutrum felis, placerat aliquam dui. Maecenas scelerisque posuere fringilla. Aliquam erat volutpat. Cras venenatis arcu ut ex porttitor accumsan.
