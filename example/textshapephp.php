@@ -3,7 +3,6 @@
 include(__DIR__.'/../source/pngborderfinder.php');
 include(__DIR__.'/../source/textshape.php');
 
-//$image=$_GET['image'];
 
 $image='cat-grumpy-icon.png';
 
@@ -11,12 +10,7 @@ $image='cat-grumpy-icon.png';
 
 
 $test=new ImageShape($image);
-
-
-//$rectangles=$test->getRectangles();
-//$polygon=$test->getDots();
-
-
+$cssDeclaration=$test->getCSSDivShapeDeclaration();
 
 
 
@@ -36,10 +30,8 @@ $test=new ImageShape($image);
 		text-align: justify;
 		font-family: arial;
 	}
-
-
 	<?php
-	echo $test->getCSSDivShapeDeclaration();
+	echo $cssDeclaration;
 	?>
 </style>
 </head>
@@ -63,60 +55,6 @@ $test=new ImageShape($image);
 	</p>
 </div>
 </body>
-
-
-
-<script>
-<?php
-//echo 'var polygon='.json_encode($polygon);
-?>
-</script>
-
-<script>
-
-
-
-function createLine(x1,y1, x2,y2){
-	var length = Math.sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
-	var angle  = Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
-	var transform = "rotate("+angle+"deg)";
-
-	var line = document.createElement('div');
-	line.className="line"
-	line.style.position='absolute';
-	line.style.transform="rotate("+angle+"deg)";
-	line.style.width=length+'px';
-	line.style.left=x1+'px';
-	line.style.top=y1+'px';
-	return line;
-}
-
-
-/*
-
-var start=false;
-for(var i=0; i<polygon.length; i++) {
-	if(start!==false) {
-		var line=createLine(start.x, start.y, polygon[i].x, polygon[i].y);
-		jQuery('body').append(line);
-	}
-	start=polygon[i];
-
-	var dot=document.createElement('div');
-	dot.className='dot start';
-	dot.style.top=polygon[i].y+'px';
-	dot.style.left=polygon[i].x+'px';
-	document.body.appendChild(dot);
-
-}
-var line=createLine(polygon[i-1]['x'], polygon[i-1]['y'], polygon[0].x, polygon[0].y);
-jQuery('body').append(line);
-*/
-
-
-</script>
-
-
 
 <html>
 
