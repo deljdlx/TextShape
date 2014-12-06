@@ -7,9 +7,13 @@ include(__DIR__.'/../source/textshape.php');
 $image='cat-grumpy-icon.png';
 
 
+/*
+instanciate lile thas is also possible
+$test=new TextShape($image);
+*/
+
 
 $borderFinder=new PNGBorderFinder($image);
-
 $test=new TextShape($image, $borderFinder);
 
 
@@ -24,10 +28,7 @@ $shapes=$test->getDivShape('left');
 <html>
 <head>
 	<style>
-	html, body {
-		margin:0;
-		padding:0;
-	}
+
 	.container {
 		width:800px;
 		margin:auto;
