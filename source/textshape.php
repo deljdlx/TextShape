@@ -18,7 +18,7 @@ class TextShape
 
 		$this->imageFile=$imageFile;
 
-		$this->imageSize=getimagesize($image);
+		$this->imageSize=getimagesize($imageFile);
 
 		$this->width=$this->imageSize[0];
 		$this->height=$this->imageSize[1];
@@ -36,7 +36,7 @@ class TextShape
 			if(isset($rectangles[$index+1])) {
 			
 				if($index==0) {
-					$buffer.='<div class="textShape" style="float: '.$float.'; height:'.$rectangle['y'].'px; width: 1px; '.$margin.';"></div>';
+					$buffer.='<div class="textShape" style="float: '.$float.'; height:'.$rectangle['y'].'px; width: 1px;"></div>';
 					continue;
 				}
 				else {
