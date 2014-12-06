@@ -9,8 +9,8 @@ class TextShape
 	
 		
 	
-		if($borderDetector) {
-			$this->borderFinder=$borderDetector;
+		if($borderFinder) {
+			$this->borderFinder=$borderFinder;
 		}
 		else {
 			$this->borderFinder=new PNGBorderFinder($imageFile);
