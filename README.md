@@ -1,4 +1,6 @@
 TextShape
 =========
 
-Javascript text shape
+CSS Text shape with javascript or PHP.
+
+
