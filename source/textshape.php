@@ -87,7 +87,6 @@ class TextShape
 				width:'.$this->width.'px;
 			}
 			.textShape {
-				background-color:rgba(255,0,0,0);
 				clear: both; 
 			}
 		';

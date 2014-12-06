@@ -35,6 +35,19 @@ $shapes=$test->getDivShape('left');
 		text-align: justify;
 		font-family: arial;
 	}
+
+	<?php
+		if(isset($_GET['debug'])) {
+			echo 	'		.textShape {
+				background-color:rgba(255,0,0,0.5);
+				clear: both; 
+			}';
+		}
+
+	?>
+
+
+
 	<?php
 	echo $cssDeclaration;
 	?>
