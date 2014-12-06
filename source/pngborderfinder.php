@@ -12,7 +12,7 @@ class PNGBorderFinder
 	protected $imageFile='';
 	
 
-	public function __construct($image, $margin=15, $threshold=5, $alphaTreshold=0.5) {
+	public function __construct($image, $margin=15, $threshold=5, $alphaThreshold=0.5) {
 		$this->imageFile=$image;
 		$this->image=imagecreatefrompng($image);
 		$this->imageSize=getimagesize($image);
@@ -23,12 +23,12 @@ class PNGBorderFinder
 		$this->margin=$margin;
 		
 		
-		$this->xThreshold=$treshold;
-		$this->yThreshold=$treshold;
+		$this->xThreshold=$threshold;
+		$this->yThreshold=$threshold;
 		
 
 
-		$this->alphaThreshold=$alphaTreshold;
+		$this->alphaThreshold=$alphaThreshold;
 		
 		$this->angleThreshold=0.01;
 		$this->distanceThreshold=8;
