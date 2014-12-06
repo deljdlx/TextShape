@@ -2,9 +2,17 @@
 
 class PNGBorderFinder
 {
-	protected $image;
 
-	public function __construct($image, $treshold=10, $alphaTreshold=0.5) {
+	public $width;
+	public $height;
+	public $margin;
+	
+
+	protected $image=null;
+	protected $imageFile='';
+	
+
+	public function __construct($image, $margin=15, $threshold=5, $alphaTreshold=0.5) {
 		$this->imageFile=$image;
 		$this->image=imagecreatefrompng($image);
 		$this->imageSize=getimagesize($image);
@@ -12,19 +20,18 @@ class PNGBorderFinder
 		$this->width=$this->imageSize[0];
 		$this->height=$this->imageSize[1];
 		
-		$this->xTreshold=$treshold;
-		$this->yTreshold=$treshold;
+		$this->margin=$margin;
+		
+		
+		$this->xThreshold=$treshold;
+		$this->yThreshold=$treshold;
 		
 
-		$this->xTreshold=5;
-		$this->yTreshold=5;
-		
-		$this->margin=15;
 
-		$this->alphaTreshold=$alphaTreshold;
+		$this->alphaThreshold=$alphaTreshold;
 		
-		$this->angleTreshold=0.01;
-		$this->distanceTreshold=8;
+		$this->angleThreshold=0.01;
+		$this->distanceThreshold=8;
 		
 		
 		
@@ -115,7 +122,7 @@ class PNGBorderFinder
 					/abs($start['y']-$dot['y'])
 				);
 				
-				if(abs($lastAngle-$angle)>$this->angleTreshold || $angle===false) {
+				if(abs($lastAngle-$angle)>$this->angleThreshold || $angle===false) {
 					$lastAngle=$angle;
 					$polygon2[]=$dot;
 				}
@@ -138,7 +145,7 @@ class PNGBorderFinder
 					+pow(abs($start['y']-$dot['y']), 2)
 				);
 				
-				if($distance>$this->distanceTreshold) {
+				if($distance>$this->distanceThreshold) {
 					$start=$dot;
 					$polygon3[]=$dot;
 				}
@@ -188,7 +195,7 @@ class PNGBorderFinder
 		for($x=0; $x<$this->width; $x++) {
 			$colorData=imagecolorat($this->image, $x, $line);
 			$opacity = (($colorData >> 24) & 0x7F);
-			if($opacity<=$this->alphaTreshold) {
+			if($opacity<=$this->alphaThreshold) {
 				break;
 			}
 		}
@@ -199,7 +206,7 @@ class PNGBorderFinder
 		for($x=$this->width-1; $x>0; $x--) {
 			$colorData=imagecolorat($this->image, $x, $line);
 			$opacity = (($colorData >> 24) & 0x7F);
-			if($opacity<=$this->alphaTreshold) {
+			if($opacity<=$this->alphaThreshold) {
 				break;
 			}
 		}
@@ -239,9 +246,9 @@ class PNGBorderFinder
 			if($direction && (
 				//et si la direction est a changée et que l'on se trouve au moins 5px en dessous
 				$direction!=$lastDirection
-				|| abs($y-$lastY)>$this->yTreshold
+				|| abs($y-$lastY)>$this->yThreshold
 				//ou si le x à une variation > à n pixel (cas des ligne horizontales)
-				|| abs($x-$lastX)>$this->xTreshold
+				|| abs($x-$lastX)>$this->xThreshold
 				)
 			) {
 				$dots[]=array(

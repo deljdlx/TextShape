@@ -1,7 +1,7 @@
 <?php
 
 
-class ImageShape
+class TextShape
 {
 
 
@@ -15,9 +15,6 @@ class ImageShape
 		else {
 			$this->borderFinder=new PNGBorderFinder($imageFile);
 		}
-
-
-
 
 		$this->imageFile=$imageFile;
 

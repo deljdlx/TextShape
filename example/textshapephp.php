@@ -8,8 +8,12 @@ $image='cat-grumpy-icon.png';
 
 
 
+$borderFinder=new PNGBorderFinder($image);
 
-$test=new ImageShape($image);
+$test=new TextShape($image, $borderFinder);
+
+
+
 $cssDeclaration=$test->getCSSDivShapeDeclaration();
 $shapes=$test->getDivShape('left');
 
