@@ -156,7 +156,6 @@ class PNGBorderFinder
 			}
 		}
 		$this->dots=$polygon3;
-	
 	}
 
 	

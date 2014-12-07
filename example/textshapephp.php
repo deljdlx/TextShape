@@ -1,7 +1,7 @@
 <?php
 
-include(__DIR__.'/../source/pngborderfinder.php');
-include(__DIR__.'/../source/textshape.php');
+include(__DIR__.'/../php/pngborderfinder.php');
+include(__DIR__.'/../php/textshape.php');
 
 
 $image='cat-grumpy-icon.png';
