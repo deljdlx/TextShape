@@ -36,7 +36,7 @@ $shapes=$test->getDivShape('left');
 	<style>
 
 	.container {
-		width:800px;
+		width:30%;
 		margin:auto;
 		text-align: justify;
 		font-family: arial;
