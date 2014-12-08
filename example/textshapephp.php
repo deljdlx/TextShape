@@ -3,8 +3,14 @@
 include(__DIR__.'/../php/pngborderfinder.php');
 include(__DIR__.'/../php/textshape.php');
 
+if(!isset($_GET['image'])) {
+	$image='cat-grumpy-icon.png';
+}
+else {
+	$image=$_GET['image'];
+}
 
-$image='cat-grumpy-icon.png';
+
 
 
 /*
