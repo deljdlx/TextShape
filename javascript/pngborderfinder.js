@@ -2,8 +2,8 @@
 function PNGBorderFinder(imageObject)
 {
 	this.image=imageObject;
-	this.height=this.image.offsetHeight;
-	this.width=this.image.offsetWidth;
+        this.height=this.image.offsetHeight || this.image.naturalWidth;
+        this.width=this.image.offsetWidth || this.image.naturalHeight;
 	
 	this.alphaThreshold=10;
 	this.yThreshold=2;
