@@ -1,7 +1,7 @@
 # TextShape
 
 
-![logo](https://github.com/deljdlx/TextShape/blob/master/textshape.png?raw=true "figure")
+
 
 
 CSS Text shape with javascript or PHP.
@@ -16,6 +16,10 @@ PHP with debug option on http://project.jlb.ninja/TextShape/example/textshapephp
 Javasript demo  http://project.jlb.ninja/TextShape/example/textshapejs.html
 
 Javasript demo  with debug http://project.jlb.ninja/TextShape/example/textshapejs-debug.html
+
+
+![logo](https://github.com/deljdlx/TextShape/blob/master/textshape.png?raw=true "figure")
+
 
 Tested on
 	Ie 8
