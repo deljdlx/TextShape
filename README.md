@@ -1,7 +1,7 @@
 # TextShape
 
 
-[figure](https://github.com/deljdlx/TextShape/blob/master/textshape.png "figure")
+[figure](https://github.com/deljdlx/TextShape/blob/master/textshape.png?raw=true "figure")
 
 
 CSS Text shape with javascript or PHP.
